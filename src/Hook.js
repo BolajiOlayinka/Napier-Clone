@@ -4,9 +4,9 @@ import "./Hook.css";
 import Logo from "./assets/images/Edinburgh.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Container } from "reactstrap";
+// import { Container } from "reactstrap";
 import { Link } from "react-router-dom";
-import Shapes from "./Shapes";
+// import Shapes from "./Shapes";
 import styled from "styled-components";
 import BannerBackground from "./assets/images/OpenDayBanner.jpg";
 
@@ -14,7 +14,7 @@ export default function Hook() {
   const [isOpen, setIsOpen] = useState();
 
   const toggle = () => setIsOpen(!isOpen);
-  const [isShown, setIsShown] = useState(false);
+  // const [isShown, setIsShown] = useState(false);
   const [CoursesisShown, setCoursesIsShown] = useState(false);
   const [StudyisShown, setStudyIsShown] = useState(false);
   const [AlumniisShown, setAlumniIsShown] = useState(false);
@@ -83,9 +83,7 @@ export default function Hook() {
           </a>
           {(!isSmallScreen || isOpen) && (
             <React.Fragment>
-              {isShown && (
-                <div>I'll appear when you hover over the button.</div>
-              )}
+             
               <button onMouseEnter={() => setCoursesIsShown(true)}
               onMouseLeave={() => setCoursesIsShown(false)}
                >
