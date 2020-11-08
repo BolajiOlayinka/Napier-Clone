@@ -1,0 +1,55 @@
+.halfTriTop{
+   position:absolute;
+   z-index: inherit 0;
+    margin-left:8em;
+   
+}
+.medicine{
+    clip-path: polygon(80% 0%, 40% 50%, 0% 0%,0% 0%);
+    
+}
+.diamondBox{
+    position:absolute;
+    margin-left:23.7em;
+    margin-top:4px;
+  
+}
+.diamond{
+    
+    clip-path: polygon(30% 0, 60% 50%, 30% 100%, 0 50%);
+    /* clip-path: polygon(35% 0, 65% 45%, 30% 100%, 0 60%); */
+    width:51em;;
+    height:39em;
+    /* clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); */
+}
+.diamondBox2{
+    position:absolute;
+    margin-left:5.2em;
+    margin-top:13em;
+  
+}
+.diamond2{
+    
+    clip-path: polygon(30% 0, 60% 50%, 30% 100%, 0 50%);
+    /* clip-path: polygon(35% 0, 65% 45%, 30% 100%, 0 60%); */
+    width:40em;
+   
+    /* clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); */
+}
+.diamondBox3{
+    position:absolute;
+    margin-left:17.6em;
+    margin-top:28.6em;
+  
+}
+.diamondBox4{
+    position:absolute;
+    margin-left:51.5em;
+   
+  
+}
+/* .diamondBox5{
+    position:absolute;
+    margin-left:39.5em;
+    margin-top: 20.5em;
+} */

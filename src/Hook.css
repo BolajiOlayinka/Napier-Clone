@@ -1,0 +1,402 @@
+/* #banner {
+
+    background-image: url('.assets/images/banner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 600px;
+
+} */
+
+.fixedNav .top-menu {
+    position: fixed;
+    margin-left: 80%;
+    width: 20%;
+    z-index: 100;
+
+}
+
+.fixedNav .top-menu .top-menu-icon {
+    display: block;
+    right: 0;
+    margin-right: 10px;
+    position: fixed;
+    margin-top: 15px;
+    z-index: 1000;
+}
+
+.fixedNav .top-menu a {
+    display: none;
+}
+.fixedNav .top-menu button {
+    display:none;
+}
+
+.fixedNav .top-menu.true a {
+    display: block;
+}
+
+.fixedNav .top-menu.true button {
+    display: block;
+}
+
+.fixedNav .top-menu.true a:not(:first-child) {
+    float: none !important;
+    text-align: left;
+    margin-left: 10px;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.fixedNav .top-menu.true button:not(:first-child) {
+    float: none !important;
+    text-align: left;
+    margin-left: 10px;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+
+
+.fixedNav .top-menu.true a:not(:first-child):hover {
+    background-color: white;
+    color: #222;
+    text-decoration: none;
+}
+.fixedNav .top-menu.true button:not(:first-child):hover {
+    background-color: white;
+    color: #222;
+    text-decoration: none;
+}
+.fixedNav .top-menu.true button:nth-child(2) {
+    margin-left: 10px;
+    margin-top: 60px;
+}
+
+.fixedNav .top-menu.true a:nth-child(2) {
+    margin-left: 10px;
+    margin-top: 60px;
+}
+
+.fixedNav .top-menu.true .top-menu-icon {
+    display: block;
+    margin-top: -397px;
+
+}
+
+.top-menu {
+    display: flex;
+    align-items: baseline;
+
+
+    margin-left: 70px;
+    user-select: none;
+    align-content: center;
+    border-bottom: 71px solid rgb(255, 255, 255);
+    padding-bottom: 5px;
+    border-left: 50px solid transparent;
+    border-right: 0px solid white;
+    /* border-top: 50px solid white; */
+    height: 10vh;
+    z-index: 0;
+
+}
+
+/* Style the links inside the navigation bar */
+.top-menu a:first-child {
+    position: absolute;
+    margin-top: -10px;
+}
+.top-menu button:first-child {
+    position: absolute;
+    margin-top: -10px;
+}
+
+.top-menu a:nth-child(2) {
+    margin-left: 170px;
+}
+.top-menu button:nth-child(2) {
+    margin-left: 170px;
+}
+
+.top-menu a:not(:first-child) {
+    margin-top: 10px;
+}
+.top-menu button:not(:first-child) {
+    margin-top: 30px;
+}
+
+
+.top-menu a {
+    float: left;
+    display: block;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    padding: 24px 16px;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.125em
+}
+
+.top-menu button {
+    float: left;
+    display: block;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    background-color:transparent;
+    border:none;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.125em
+}
+
+/* Change the color of links on hover */
+.top-menu a:not(:first-child):hover {
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+}
+.top-menu button:not(:first-child):hover {
+    /* background-color: #222;
+    color: white;
+    text-decoration: none; */
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.top-menu .top-menu-icon {
+
+    font-size: 30px;
+
+    display: none;
+
+}
+
+.mainText {
+    text-align: left;
+    position: absolute;
+}
+
+.fixedNav .bannerBody {
+    padding-top: 110px;
+}
+
+.mainText h1 {
+    color: white;
+    margin-left: 3em;
+    width: 15em;
+    margin-top: 60px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.start {
+    width: 50em;
+    height: 0;
+    border-top: 70px solid white;
+    border-right: 100px solid transparent;
+    margin-top: 18em;
+    position: absolute;
+}
+
+.start h5 {
+    margin-top: -45px;
+
+}
+
+.start h5 a {
+    color: black;
+    margin-left: 6em;
+    font-weight: 600;
+
+
+}
+
+.start h5 a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.searchCourses {
+    width: 56em;
+    height: 0;
+    border-bottom: 80px solid #dd6617;
+    border-right: 100px solid transparent;
+    margin-top: 28em;
+    position: absolute;
+    color: white;
+
+}
+
+.searchCourses h5 {
+    margin-left: 3em;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.searchSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.inputSearch {
+    padding: 10px;
+    width: 50%;
+    border-style: none;
+}
+
+.searchIcon {
+    font-size: 30px;
+    color: white;
+    font-weight: lighter;
+}
+
+.pageBody {
+    background-color: black;
+    width: 100%;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: justify;
+    margin: auto;
+    margin-top: 10vh;
+    position: inherit;
+}
+
+
+@media screen and (min-width: 1000px) {
+    .top-menu a:nth-child(2) {
+        margin-left: 250px;
+    }
+    .top-menu button:nth-child(2) {
+        margin-left: 250px;
+    }
+    .top-menu a {
+        font-size: 16px;
+    }
+    .top-menu button {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .top-menu a:not(:first-child) {
+        display: none;
+    }
+    .top-menu button:not(:first-child) {
+        display: none;
+    }
+
+    .top-menu a:nth-child(2) {
+        margin-left: 0px;
+        margin-top: 8em !important;
+    }
+    .top-menu button:nth-child(2) {
+        margin-left: 0px;
+        margin-top: 8em !important;
+    }
+
+    .logo {
+        width: 80%;
+
+    }
+
+    .top-menu a:not(:first-child):hover {
+        background-color: white;
+        color: #dd6617;
+        text-decoration: none;
+    }
+    .top-menu button:not(:first-child):hover {
+        background-color: white;
+        color: #dd6617;
+        text-decoration: none;
+    }
+
+    .top-menu a:first-child {
+        position: absolute;
+    }
+    .top-menu button:first-child {
+        position: absolute;
+    }
+
+    .top-menu .top-menu-icon {
+        float: right;
+        display: block !important;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 75px;
+        margin-right: 8px;
+        font-size: 20px;
+    }
+    .top-menu button {
+        /* margin-top:20px; */
+        margin-top: -5px !important;
+        display: block;
+        text-align: left;
+        margin-right: 15px;
+        color: white;
+        font-size: 10px;
+    }
+    .top-menu a {
+        /* margin-top:20px; */
+        margin-top: -5px !important;
+        display: block;
+        text-align: left;
+        margin-right: 15px;
+        color: white;
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .top-menu .true .top-menu-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: black;
+        margin-top: 60px;
+
+    }
+    
+
+    .top-menu.left {
+        background-color: orange;
+    }
+
+    .top-menu.true a {
+        float: none;
+        display: block;
+        text-align: left;
+
+
+    }
+    .top-menu.true button {
+        float: none;
+        display: block;
+        text-align: left;
+
+
+    }
+
+    .top-menu a {
+        margin-top: 0px;
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .top-menu button {
+        margin-top: 0px;
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
