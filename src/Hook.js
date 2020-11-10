@@ -394,6 +394,8 @@ const CoursesDiv = styled.div`
   margin-left:330px;
   padding-top:10px;
   padding-bottom:10px;
+  position:absolute;
+  z-index:10;
   
 `;
 const CourseLink = styled(Link)`
@@ -430,6 +432,8 @@ padding-left:10px;
   margin-left:430px;
   padding-top:10px;
   padding-bottom:10px;
+  position:absolute;
+  z-index:10;
 `
 const GlobalSection=styled.div `
 background-color: white;
@@ -438,6 +442,8 @@ padding-left:10px;
   margin-left:520px;
   padding-top:10px;
   padding-bottom:10px;
+  position:absolute;
+  z-index:10;
 `
 const ResearchSection=styled.div `
 background-color: white;
@@ -446,6 +452,8 @@ padding-left:10px;
   margin-left:630px;
   padding-top:10px;
   padding-bottom:10px;
+  position:absolute;
+  z-index:10;
 `
 const AlumniSection=styled.div `
 background-color: white;
@@ -454,6 +462,8 @@ padding-left:10px;
   margin-left:815px;
   padding-top:10px;
   padding-bottom:10px;
+  position:absolute;
+  z-index:10;
 `
 const AboutSection=styled.div `
 background-color: white;
@@ -462,4 +472,6 @@ padding-left:10px;
   margin-left:900px;
   padding-top:10px;
   padding-bottom:10px;
+  position:absolute;
+  z-index:10;
 `
