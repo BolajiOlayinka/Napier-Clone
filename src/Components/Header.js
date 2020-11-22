@@ -1,51 +1,25 @@
-import React, { useState, useRef, useEffect } from "react";
-import "./Hook.css";
-// import { Link } from "react-router-dom";
-import Logo from "./assets/images/Edinburgh.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
-// import { Container } from "reactstrap";
-import { Link } from "react-router-dom";
-// import Shapes from "./Shapes";
+import React, { useState, useRef,useEffect } from "react";
 import styled from "styled-components";
-import BannerBackground from "./assets/images/OpenDayBanner.jpg";
+import './Header.css';
+import { Link } from "react-router-dom";
+import Logo from "../assets/images/Edinburgh.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-export default function Hook() {
+export default function Header() {
   const [isOpen, setIsOpen] = useState();
-
   const toggle = () => setIsOpen(!isOpen);
-  // const [isShown, setIsShown] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [CoursesisShown, setCoursesIsShown] = useState(false);
   const [StudyisShown, setStudyIsShown] = useState(false);
   const [AlumniisShown, setAlumniIsShown] = useState(false);
   const [AboutisShown, setAboutIsShown] = useState(false);
   const [GlobalisShown, setGlobalIsShown] = useState(false);
   const [ResearchisShown, setResearchIsShown] = useState(false);
+  const myNav = useRef();
+//   const mainText = useRef();
   let topnav = `top-menu ${isOpen}`;
 
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("max-width:600px");
-    mediaQuery.addListener(handleMediaQueryChange);
-    handleMediaQueryChange(mediaQuery);
-    return () => {
-      mediaQuery.removeListener(handleMediaQueryChange);
-    };
-  }, []);
-
-  const handleMediaQueryChange = (mediaQuery) => {
-    if (mediaQuery.matches) {
-      setIsSmallScreen(true);
-    } else {
-      setIsSmallScreen(false);
-    }
-  };
-
-  const myNav = useRef();
-  const mainText = useRef();
-  // const topOfNav=myNav.current.offSetTop;
-
-  // console.log(topOfNav)
   const [scrollDepth, setScrollDepth] = useState(0);
   function determineScroll() {
     const scrolled =
@@ -67,25 +41,44 @@ export default function Hook() {
       window.removeEventListener("scroll", determineScroll);
     };
   });
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("max-width:600px");
+    mediaQuery.addListener(handleMediaQueryChange);
+    handleMediaQueryChange(mediaQuery);
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
+  }, []);
+
+  const handleMediaQueryChange = (mediaQuery) => {
+    if (mediaQuery.matches) {
+      setIsSmallScreen(true);
+    } else {
+      setIsSmallScreen(false);
+    }
+  };
+
   return (
     <React.Fragment>
-      {/* <BannerArea> */}
-        {/* <PreNavbar>
-          <StyledPreNavLink to="/">myNapier</StyledPreNavLink>
-          <StyledPreNavLink to="/">Staff intranet</StyledPreNavLink>
-          <StyledPreNavLink to="/">Jobs</StyledPreNavLink>
-          <StyledPreNavLink to="/">Staff directory</StyledPreNavLink>
-        </PreNavbar> */}
+     <PreNavbar>
+        <StyledPreNavLink to="/">myNapier</StyledPreNavLink>
+        <StyledPreNavLink to="/">Staff intranet</StyledPreNavLink>
+        <StyledPreNavLink to="/">Jobs</StyledPreNavLink>
+        <StyledPreNavLink to="/">Staff directory</StyledPreNavLink>
+      </PreNavbar>
+      <NavUnderlay>
 
-        <div className={topnav} ref={myNav}>
+      </NavUnderlay>
+      <NavContainer ref={myNav} className={topnav}>
+     
         <NavSection>
-          <a href="/">
+        <Link to="/">
             <img src={Logo} alt="logo" className="logo" />
-          </a>
+          </Link>
           {(!isSmallScreen || isOpen) && (
-            <React.Fragment>
-             
-              <button onMouseEnter={() => setCoursesIsShown(true)}
+          <React.Fragment>
+          <button onMouseEnter={() => setCoursesIsShown(true)}
               onMouseLeave={() => setCoursesIsShown(false)}
                >
                 Courses
@@ -105,11 +98,9 @@ export default function Hook() {
                <button onMouseEnter={() => setAboutIsShown(true)}
               onMouseLeave={() => setAboutIsShown(false)}
                >About Us</button>
-        
-            </React.Fragment>
+              </React.Fragment>
           )}
-
-          <FontAwesomeIcon
+              <FontAwesomeIcon
             icon={faBars}
             className="top-menu-icon"
             onClick={() => {
@@ -118,8 +109,7 @@ export default function Hook() {
           />
           <div className="clear-fix"></div>
           {console.log(<p> You have Scrolled this far:{scrollDepth}</p>)}
-          </NavSection>
-        </div>
+        </NavSection>
         {CoursesisShown && (
           <CoursesDiv onMouseEnter={() => setCoursesIsShown(true)} onMouseLeave={() => setCoursesIsShown(false)} >
           <SectionOne>
@@ -225,160 +215,84 @@ export default function Hook() {
             <CourseLink to="/">Contact us</CourseLink>
 </AboutSection>
 )}
-              
-        <div className="bannerBody" ref={mainText}>
-          <div className="mainText">
-            <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit </h1>
-          </div>
-          <div className="start">
-            <h5>
-              <Link to="/"> Start Your Journey Here > >> >>></Link>{" "}
-            </h5>
-          </div>
-         
-
-
-
-          <div className="searchCourses">
-            <div class="searchSection">
-              <h5>Find a Course</h5>
-              <input
-                type="search"
-                className="inputSearch"
-                placeholder="E.g Nursing"
-              />
-              <FontAwesomeIcon icon={faSearch} className="searchIcon" />
-            </div>
-          </div>
-        </div>
-
-        {/* <img src={BannerBackground} alt="banner background" /> */}
-
-        {/* <Container>
-            <div className="pageBody">
-            <Shapes/>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                possimus necessitatibus, quis, soluta sapiente quasi a quidem,
-                atque provident facere nisi doloremque culpa expedita eligendi.
-                Tenetur eius quo hic maiores fuga illum non nisi nobis nostrum
-                vero harum, aliquid, distinctio reiciendis beatae quaerat rerum,
-                voluptatibus veniam ipsa! Tempora, et nemo.
-              </p>
-            </div>
-          </Container> */}
-      {/* </BannerArea> */}
+      </NavContainer>
     </React.Fragment>
   );
 }
 
-const BannerArea = styled.div`
-  background-image: url(${BannerBackground});
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 600px;
-`;
 const PreNavbar = styled.div`
   display: flex;
   justify-content: center;
-  @media(min-width:1200px){
-    width:1200px;
-    margin:auto;
+  font-weight:400;
+  height:42px;
+  a{
+      margin-right:32px;
+  }
+  @media (min-width: 1200px) {
+    width: 1200px;
+    margin: auto;
   }
 `;
-const NavSection = styled.div `
-@media(min-width:1200px){
-  width:1200px;
+const NavSection = styled.div`
+background-color:white;
+position:relative;
+width:100%;
+height: 71px;
+    padding: 0.4em 0 0.2em 0.6em;
     
+    z-index:1;
+    margin-top:-71px;
+   
+margin-left:50px;
+transition: all 400ms;
+
+:before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    left: -44px;
+    border-bottom: 71px solid transparent;
+    border-right: 44px solid white;
 }
-`
+
+ 
+`;
 const StyledPreNavLink = styled(Link)`
   color: white;
   font-size: 1.125em;
   padding-top: 7px;
   margin-right: 32px;
 `;
+
+const NavContainer = styled.div`
+
+
+
+@media(min-width:76em){
+    height: 71px;
+    position:relative;
+
+margin:auto;
+width:1200px;
+
+   ${'' /* width:1200px;
+   max-width:1200px;
+   margin:auto;
+    margin-left:75px; */}
+   
+}
+`;
+const NavUnderlay = styled.div `
+width:40%;
+margin-left:auto;
+height:71px;
+background-color:white;
+position:relative;
+z-index:0;
+
+`
 const CoursesDiv = styled.div`
   background-color: white;
   display: flex;

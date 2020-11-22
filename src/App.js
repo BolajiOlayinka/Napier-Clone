@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import Main from './Main';
-import Hook from "./Hook";
+import Home from '././Components/Home';
+// import Hook from "./Hook";
 import './App.css';
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -9,7 +9,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Hook />
+        {/* <Hook /> */}
+        <Home/>
       </div>
     );
   }
