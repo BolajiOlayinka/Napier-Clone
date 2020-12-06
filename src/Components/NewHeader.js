@@ -8,7 +8,7 @@ import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 // import Shapes from "./Shapes";
 import styled from "styled-components";
-import BannerBackground from "../assets/images/OpenDayBanner.jpg";
+// import BannerBackground from "../assets/images/OpenDayBanner.jpg";
 
 export default function Hook() {
   const [isOpen, setIsOpen] = useState();
@@ -82,7 +82,7 @@ export default function Hook() {
           <a href="/">
             <img src={Logo} alt="logo" className="logo" />
           </a>
-          {(!isSmallScreen || isOpen) && (
+          {!isSmallScreen ? (
             <React.Fragment>
               <button
                 onMouseEnter={() => setCoursesIsShown(true)}
@@ -121,8 +121,10 @@ export default function Hook() {
                 About Us
               </button>
             </React.Fragment>
-          )}
-
+          ): null}
+           
+          
+</NavSection>
           <FontAwesomeIcon
             icon={faBars}
             className="top-menu-icon"
@@ -132,8 +134,9 @@ export default function Hook() {
           />
           <div className="clear-fix"></div>
           {console.log(<p> You have Scrolled this far:{scrollDepth}</p>)}
-        </NavSection>
+        
       </div>
+      <HoverSection>
       {CoursesisShown && (
         <CoursesDiv
           onMouseEnter={() => setCoursesIsShown(true)}
@@ -248,7 +251,7 @@ export default function Hook() {
           <CourseLink to="/">Contact us</CourseLink>
         </AboutSection>
       )}
-
+</HoverSection>
       <div className="bannerBody" ref={mainText}>
         <div className="mainText">
           <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit </h1>
@@ -274,13 +277,13 @@ export default function Hook() {
     </React.Fragment>
   );
 }
-const BannerArea = styled.div`
-  background-image: url(${BannerBackground});
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 600px;
-`;
+// const BannerArea = styled.div`
+//   background-image: url(${BannerBackground});
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   width: 100%;
+//   height: 600px;
+// `;
 const PreNavbar = styled.div`
   display: flex;
   justify-content: center;
@@ -297,7 +300,7 @@ const NavSection = styled.div`
   padding: 0.4em 0 0.2em 0.6em;
 display:flex;
 align-items:center;
-  z-index: 1;
+  z-index: 100;
 
   margin-left: 75px;
   transition: all 400ms;
@@ -320,10 +323,14 @@ align-items:center;
 `;
 const StyledPreNavLink = styled(Link)`
   color: white;
-  font-size: 1.125em;
+  font-size: 16px;
   padding-top: 7px;
+  padding-bottom: 7px;
   margin-right: 32px;
 `;
+const HoverSection = styled.div `
+margin-top:60px;
+`
 const CoursesDiv = styled.div`
   background-color: white;
   display: flex;
@@ -341,7 +348,7 @@ const CourseLink = styled(Link)`
 
   color: #333333;
   line-height: 1.4;
-  font-size: 1.125em;
+  font-size: 16px;
 `;
 const SectionOne = styled.div`
   width: 33%;

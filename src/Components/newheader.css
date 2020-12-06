@@ -5,8 +5,32 @@
     margin-left: 80%;
     width: 20%;
     z-index: 100;
-
+    
+    
 }
+.fixedNav .top-menu div{
+    background-color:black;
+    
+}
+.fixedNav .top-menu div button{
+    display:none!important;
+    
+}
+.fixedNav .top-menu div img{
+    display:none;
+    
+}
+.fixedNav .top-menu div:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    left: -44px;
+    border-bottom: 71px solid transparent;
+    border-right: 44px solid black;
+  }
+
 
 .fixedNav .top-menu .top-menu-icon {
     display: block;
@@ -15,6 +39,7 @@
     position: fixed;
     margin-top: 15px;
     z-index: 1000;
+    color:white;
 }
 
 .fixedNav .top-menu a {
@@ -32,15 +57,8 @@
     display: block;
 }
 
-.fixedNav .top-menu.true a:not(:first-child) {
-    float: none !important;
-    text-align: left;
-    margin-left: 10px;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 14px;
-}
-.fixedNav .top-menu.true button:not(:first-child) {
+
+/* .fixedNav .top-menu.true button:not(:first-child) {
     float: none !important;
     text-align: left;
     margin-left: 10px;
@@ -76,7 +94,7 @@
     display: block;
     margin-top: -397px;
 
-}
+} */
 
 .top-menu {
     display: flex;
@@ -85,6 +103,7 @@
     user-select: none;
     align-content: center;
     position:fixed;
+    z-index:100;
     /* background-color:white; */
     
     /* border-bottom: 71px solid rgb(255, 255, 255);
@@ -155,9 +174,10 @@
     text-align: center;
     /* padding: 24px 16px; */
     text-decoration: none;
-    /* position: absolute; */
+    position: relative;
     font-size: 1.125em;
     width:196px;
+    z-index:100;
 }
 
 .top-menu button {
@@ -167,14 +187,14 @@
     text-align: center;
     background-color:transparent;
     border:none;
-    height:40px;
+    /* height:40px; */
     text-decoration: none;
-    /* position: relative; */
-    font-size: 1.125em;
+    position: relative;
+    font-size: 16px;
     font-weight:400;
     line-height: 1.4;
     padding-top: 0px;
- 
+    z-index:100;
     padding-top:2em;
     padding-bottom:2em;
     padding-left:1em;
@@ -182,10 +202,10 @@
     font-family:'Titillium Web', sans-serif
     
 }
-.top-menu button:not(:first-child) {
+/* .top-menu button:not(:first-child) {
     font-size: 1.125em;
 
-}
+} */
 
 /* Change the color of links on hover */
 /* .top-menu a:not(:first-child):hover {
