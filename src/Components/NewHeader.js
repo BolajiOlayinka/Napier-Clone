@@ -301,7 +301,7 @@ const NavSection = styled.div`
 display:flex;
 align-items:center;
   z-index: 100;
-
+margin-right:-200px;
   margin-left: 75px;
   transition: all 400ms;
 
@@ -319,6 +319,7 @@ align-items:center;
   @media (min-width: 76em){
     width: 1200px;
     margin:auto;
+    
   }
 `;
 const StyledPreNavLink = styled(Link)`
